@@ -4,7 +4,11 @@ using System.Text;
 
 namespace OT.DAL.Entities
 {
-    class BaseEntity
+   public class BaseEntity
     {
+        public int ID { get; set; }
+        public bool Deleted { get; set; }
+        public DateTime? DeletedDate { get; set; }
+        public DateTime? CreatedDate { get; set; }
     }
 }
