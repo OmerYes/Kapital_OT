@@ -13,5 +13,6 @@ namespace OT.DAL.Context
             optionsBuilder.UseSqlServer("server=.;database=KapitalOT_Db;integrated security=true;");
         }
         public DbSet<User> Users { get; set; }
+        public DbSet<Ticket> Tickets { get; set; }
     }
 }

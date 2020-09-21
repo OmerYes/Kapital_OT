@@ -11,5 +11,6 @@ namespace OT.DAL.Entities
         public string Email { get; set; }
         public int Role { get; set; }
         public string Department { get; set; }
+        public virtual List<Ticket> Tickets { get; set; }
     }
 }
