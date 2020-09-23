@@ -9540,7 +9540,8 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
 .login-input .form-group {
   margin-bottom: 30px; }
   .login-input .form-group label {
-    color: #505F76;
+    /*color: #505F76;*/
+    color:red;
     font-size: 15px; }
   .login-input .form-group .form-control {
     background: transparent;
