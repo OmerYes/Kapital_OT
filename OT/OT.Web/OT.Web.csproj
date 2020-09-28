@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Areas\Reklam\Models\" />
     <Folder Include="Models\" />
   </ItemGroup>
 

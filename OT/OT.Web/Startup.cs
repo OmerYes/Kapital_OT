@@ -37,6 +37,7 @@ namespace OT.Web
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute("default", "{controller=Login}/{action=Index}/{id=id}");
+                endpoints.MapControllerRoute("exist", "{area=Reklam}/{controller=test}/{action=Index}");
             });
         }
     }
