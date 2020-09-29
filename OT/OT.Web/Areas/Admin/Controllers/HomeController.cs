@@ -4,9 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace OT.Web.Areas.Reklam.Controllers
+namespace OT.Web.Areas.Admin.Controllers
 {
-    public class test : Controller
+    [Area("Admin")]
+    public class HomeController : Controller
     {
         public IActionResult Index()
         {
