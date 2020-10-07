@@ -14,16 +14,16 @@ namespace OT.Web.Controllers
         {
             return View();
         }
-        [HttpPost]
-        public IActionResult Index(User user)
-        {
-            User model = unit.UserRepo.FirstOrDefault(x => x.Email == user.Email && x.Password == user.Password);
-            if (model != null)
-            {
-                FormsAuthentication
-            }
-            return
+        //[HttpPost]
+        //public IActionResult Index(User user)
+        //{
+        //    User model = unit.UserRepo.FirstOrDefault(x => x.Email == user.Email && x.Password == user.Password);
+        //    if (model != null)
+        //    {
+        //        FormsAuthentication
+        //    }
+        //    return
 
-        }
+        //}
     }
 }
