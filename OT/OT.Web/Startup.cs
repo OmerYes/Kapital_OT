@@ -23,11 +23,11 @@ namespace OT.Web
         {
             services.AddMvc();
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
-            //services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-            //    .AddCookie(Option =>
-            //    {
-            //        Option.LoginPath = "/login/index/";
-            //    });
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+         .AddCookie(options =>
+         {
+             options.LoginPath = new PathString("/login");
+         });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -39,10 +39,11 @@ namespace OT.Web
             }
 
             app.UseRouting();
+            app.UseAuthorization();
             app.UseStaticFiles();
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute("default", "{controller=Login}/{action=Index}/{id=id}");
+                endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id=id}");
                 endpoints.MapControllerRoute("exist", "{area=Admin}/{controller=Home}/{action=Index}");
             });
         }

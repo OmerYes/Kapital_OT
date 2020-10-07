@@ -14,5 +14,10 @@ namespace OT.Web.Controllers
         {
             return View();
         }
+        [Authorize]
+        public IActionResult test()
+        {
+            return View();
+        }
     }
 }
