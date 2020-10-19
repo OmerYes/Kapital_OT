@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace OT.Web.Controllers
 {
+   
     public class Home : Controller
     {
         [Authorize]

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -21,8 +21,9 @@ namespace OT.Web
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
-            services.AddControllersWithViews().AddRazorRuntimeCompilation();
+            services.AddMvc();//mvc yapısında olduğunu belirtiyorum
+            services.AddControllersWithViews().AddRazorRuntimeCompilation(); //projeyi çalıştırınca bulunduğum sayfadan(view) çalışmasını sağlamak için
+            //authentication kullanınca auth olmayan kullanıcılar için login sayfasına yönlendirmenin yapıldığı alan
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
          .AddCookie(options =>
          {
@@ -39,12 +40,13 @@ namespace OT.Web
             }
 
             app.UseRouting();
-            app.UseAuthorization();
-            app.UseStaticFiles();
+            app.UseAuthorization();// kimlik doğrulaması yapabilmek için eklendi
+            app.UseStaticFiles();//.js,.css sayfalarını kullanmak için eklendi
+            //routing (Convention-based routing) kulllanılan yer
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id=id}");
-                endpoints.MapControllerRoute("exist", "{area=Admin}/{controller=Home}/{action=Index}");
+                //endpoints.MapControllerRoute("exist", "{area=Admin}/{controller=Home}/{action=Index}");
             });
         }
     }
