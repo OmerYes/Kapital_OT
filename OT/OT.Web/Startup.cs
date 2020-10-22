@@ -21,8 +21,12 @@ namespace OT.Web
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();//mvc yapısında olduğunu belirtiyorum
-            services.AddControllersWithViews().AddRazorRuntimeCompilation(); //projeyi çalıştırınca bulunduğum sayfadan(view) çalışmasını sağlamak için
+            //mvc yapısında olduğunu belirtiyorum
+            services.AddMvc();
+
+            //projeyi çalıştırınca bulunduğum sayfadan(view) çalışmasını sağlamak için
+            services.AddControllersWithViews().AddRazorRuntimeCompilation(); 
+           
             //authentication kullanınca auth olmayan kullanıcılar için login sayfasına yönlendirmenin yapıldığı alan
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
          .AddCookie(options =>
@@ -38,10 +42,17 @@ namespace OT.Web
             {
                 app.UseDeveloperExceptionPage();
             }
-
             app.UseRouting();
-            app.UseAuthorization();// kimlik doğrulaması yapabilmek için eklendi
-            app.UseStaticFiles();//.js,.css sayfalarını kullanmak için eklendi
+
+            //sen kimsin diye soruyoruz
+            app.UseAuthentication();
+
+            // kimlik doğrulaması yapabilmek için eklendi, üst kod da kim olduğunu öğrendiğimiz kullanıcının yetkilerine göre erişmek istediği yere erişim izni verdiğimiz alan 
+            app.UseAuthorization();
+
+            //.js,.css sayfalarını kullanmak için eklendi
+            app.UseStaticFiles();
+           
             //routing (Convention-based routing) kulllanılan yer
             app.UseEndpoints(endpoints =>
             {

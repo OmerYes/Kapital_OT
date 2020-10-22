@@ -2,21 +2,21 @@
 {
     $("#login_form").validate({
         rules: {
-            email: {
+            Email: {
                 required: true,
                 email: true,
             },
-            password: {
+            Password: {
                 required: true,
             }
         },
 
         messages: {
-            email: {
+            Email: {
                 required: "**Lütfen email adresinizi giriniz",
                 email:"**Lütfen geçerli bir mail adresi giriniz"
             },
-            password:"**Lütfen şifrenizi giriniz"
+            Password:"**Lütfen şifrenizi giriniz"
         }
     })
 })
